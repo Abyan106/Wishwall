@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="bg-gradient-to-b from-pink-100 to-purple-200 min-h-screen flex flex-col items-center justify-center p-6 transition-colors duration-700">
+
+  <!-- headernya -->
+  <header class="mb-6 text-center">
+    <h1 class="text-4xl font-bold text-purple-700 drop-shadow-md transition-colors duration-700">🌸 Wish Wall 🌸</h1>
+    <p class="text-gray-600 mt-2 transition-colors duration-700">Harapan kami untuk semester depan</p>
+  </header>
+
+  <!-- button darkmode -->
+  <div class="flex flex-wrap gap-3 mb-8 justify-center">
+    <input id="searchInput" type="text" placeholder="Cari nama orang..."
+      class="p-2 border rounded-lg text-center shadow-sm focus:ring focus:ring-purple-300 placeholder-gray-400 dark:placeholder-gray-300 transition-all duration-700 bg-white/70 dark:bg-gray-800 dark:text-white" />
+    <button id="themeToggle"
+      class="px-4 py-2 rounded-lg bg-purple-400 text-white hover:bg-purple-500 active:scale-95 transition-all duration-300 shadow-md">
+      🌙 Dark Mode
+    </button>
+  </div>
+
+  <!-- ini wishes nya -->
+  <main id="wishContainer"
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-5xl">
+  </main>
+
+  <!-- ini footer nya -->
+  <footer class="mt-10 text-gray-500 text-sm text-center transition-colors duration-700">
+    <p>Made with ❤️ by <span class="text-purple-600 font-semibold dark:text-purple-300">Kelompok 3</span></p>
+  </footer>
+
+</body>
+</html>
