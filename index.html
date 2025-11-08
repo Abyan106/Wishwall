@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -32,6 +32,8 @@
     <p>Made with ❤️ by <span class="text-purple-600 font-semibold dark:text-purple-500">Kelompok 3</span></p>
   </footer>
 
+
+<!-- add nama and wish by KAYY -->
 <script>
   const wishes = [
     { name: "Kayy",  wish: "Semoga semester depan nilainya bagus terus ✨" },
@@ -45,6 +47,7 @@
 
   const wishContainer = document.getElementById("wishContainer");
   const searchInput   = document.getElementById("searchInput");
+  const toggleBtn = document.getElementById("themeToggle");
 
   function displayWishes(list) {
     wishContainer.innerHTML = "";
@@ -58,9 +61,7 @@
       wishContainer.innerHTML += card;
     });
   }
-
-
-  displayWishes(wishes);
+// dzaky nambah fitur search dan nambah wishes
 
   searchInput.addEventListener("input", () => {
     const keyword = searchInput.value.toLowerCase();
@@ -71,7 +72,31 @@
 
     displayWishes(filtered);
   });
+
+  displayWishes(wishes);
+<!-- sampe sini by KAYY -->
+ 
+<!-- Patin punya -->
+     toggleBtn.addEventListener("click", () => {
+      const body = document.body;
+      const isDark = body.classList.toggle("dark");
+
+      if (isDark) {
+        body.classList.remove("bg-gradient-to-b", "from-pink-100", "to-purple-200");
+        body.classList.add("bg-gray-900", "text-white");
+        toggleBtn.textContent = "☀️ Light Mode";
+      } else {
+        body.classList.add("bg-gradient-to-b", "from-pink-100", "to-purple-200");
+        body.classList.remove("bg-gray-900", "text-white");
+        toggleBtn.textContent = "🌙 Dark Mode";
+      }
+    });
+
+    renderWishes(wishes);
+      });
 </script>
 
 </body>
 </html>
+
+
