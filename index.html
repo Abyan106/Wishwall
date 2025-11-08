@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Wish Wall</title>
 </head>
 
 <!-- css iren -->
@@ -57,6 +57,7 @@
   </footer>
 
 
+<script src="https://cdn.tailwindcss.com"></script>
 <!-- add nama and wish by KAYY -->
 <script>
   const wishes = [
@@ -73,6 +74,7 @@
   const searchInput   = document.getElementById("searchInput");
   const toggleBtn = document.getElementById("themeToggle");
 
+  // dzaky nambah fitur search dan nambah wishes
   function displayWishes(list) {
     wishContainer.innerHTML = "";
     list.forEach(item => {
@@ -85,7 +87,6 @@
       wishContainer.innerHTML += card;
     });
   }
-// dzaky nambah fitur search dan nambah wishes
 
   searchInput.addEventListener("input", () => {
     const keyword = searchInput.value.toLowerCase();
@@ -114,7 +115,7 @@
   };
 
 
-<!-- Patin punya -->
+  //patin
      toggleBtn.addEventListener("click", () => {
       const body = document.body;
       const isDark = body.classList.toggle("dark");
@@ -135,5 +136,3 @@
 
 </body>
 </html>
-
-
