@@ -23,59 +23,55 @@
     </button>
   </div>
 
-  <!-- wishes -->
-<main id="wishContainer"
+  <main id="wishContainer"
     class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-5xl">
-
-    <div class="card bg-white/80 p-4 rounded-xl shadow" data-name="Kaysa">
-      <h2 class="text-xl font-bold">Kaysa</h2>
-      <p>Ayo kembali ke laut setelah selesai dengan percodingan!</p>
-    </div>
-
-    <div class="card bg-white/80 p-4 rounded-xl shadow" data-name="Iren">
-      <h2 class="text-xl font-bold">Iren</h2>
-      <p>Semangat ren biar cumlaude!</p>
-    </div>
-
-    <div class="card bg-white/80 p-4 rounded-xl shadow" data-name="Abyan">
-      <h2 class="text-xl font-bold">Abyan</h2>
-      <p>Semoga harimu menyenangkan!</p>
-    </div>
-
-    <div class="card bg-white/80 p-4 rounded-xl shadow" data-name="Dzaky">
-      <h2 class="text-xl font-bold">Dzaky</h2>
-      <p>Semangat terus!</p>
-    </div>
-
-    <div class="card bg-white/80 p-4 rounded-xl shadow" data-name="Najah">
-      <h2 class="text-xl font-bold">Najah</h2>
-      <p>Semangat biar ketemu Jaehyun!</p>
-    </div>
-
   </main>
-
-  <!-- fitur search -->
-  <script>
-  const searchInput = document.getElementById("searchInput");
-
-  function applySearch() {
-    const keyword = searchInput.value.toLowerCase();
-    const cards = document.querySelectorAll("#wishContainer .card");
-
-    cards.forEach(card => {
-      const name = card.getAttribute("data-name").toLowerCase();
-      card.style.display = name.includes(keyword) ? "block" : "none";
-    });
-  }
-
-  searchInput.addEventListener("input", applySearch);
-</script>
-
 
   <!-- ini footer nya -->
   <footer class="mt-10 text-gray-500 text-sm text-center transition-colors duration-700">
     <p>Made with ❤️ by <span class="text-purple-600 font-semibold dark:text-purple-500">Kelompok 3</span></p>
   </footer>
+
+<script>
+  const wishes = [
+    { name: "Kayy",  wish: "Semoga semester depan nilainya bagus terus ✨" },
+    { name: "Iren",  wish: "Semoga makin semangat kuliahnya 💗" },
+    { name: "Patin", wish: "Semoga sehat terus dan tidak menunda tugas 😆" },
+    { name: "Kaysa", wish: "Ayo kembali ke laut setelah selesai dengan percodingan!" },
+    { name: "Abyan", wish: "Semoga harimu menyenangkan!" },
+    { name: "Dzaky", wish: "Semangat terus!" },
+    { name: "Najah", wish: "Semangat biar ketemu Jaehyun!" }
+  ];
+
+  const wishContainer = document.getElementById("wishContainer");
+  const searchInput   = document.getElementById("searchInput");
+
+  function displayWishes(list) {
+    wishContainer.innerHTML = "";
+    list.forEach(item => {
+      const card = `
+        <div class="p-5 bg-white/80 dark:bg-gray-900 rounded-xl shadow-md hover:scale-105 transition-all duration-300">
+          <h2 class="text-xl font-semibold text-purple-700 dark:text-purple-300">${item.name}</h2>
+          <p class="mt-2 text-gray-700 dark:text-gray-200">${item.wish}</p>
+        </div>
+      `;
+      wishContainer.innerHTML += card;
+    });
+  }
+
+
+  displayWishes(wishes);
+
+  searchInput.addEventListener("input", () => {
+    const keyword = searchInput.value.toLowerCase();
+
+    const filtered = wishes.filter(w =>
+      w.name.toLowerCase().includes(keyword)
+    );
+
+    displayWishes(filtered);
+  });
+</script>
 
 </body>
 </html>
