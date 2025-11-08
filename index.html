@@ -40,89 +40,23 @@
 
 <!-- Patin punya -->
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wishes Dark Mode</title>
-    <style>
-      body {
-        font-family: "Poppins", sans-serif;
-        background-color: #e3f2fd;
-        color: #0d47a1;
-        margin: 0;
-        padding: 20px;
-        transition: background-color 0.3s, color 0.3s;
-        text-align: center;
-      }
-
-      .card {
-        background-color: #f5f5f5;
-        padding: 15px;
-        margin: 10px 0;
-        border-radius: 8px;
-        transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
-      }
-
-      .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-      }
-
-      .dark-mode {
-        background-color: #121212;
-        color: #fff;
-      }
-
-      .dark-mode .card {
-        background-color: #1e1e1e;
-        color: #fff;
-        border: 1px solid #333;
-      }
-
-      #darkModeToggle {
-        padding: 8px 12px;
-        cursor: pointer;
-        margin-bottom: 20px;
-      }
-    </style>
-  </head>
-  <body>
-
-    <button id="darkModeToggle">Dark Mode</button>
-
-    <div class="card">
-      <h3>Kaysa</h3>
-      <p>Ayo kembali ke laut setelah selesai dengan percodingan!</p>
-    </div>
-
-    <div class="card">
-      <h3>Iren</h3>
-      <p>Semangat ren biar cumlaude!</p>
-    </div>
-
-    <div class="card">
-      <h3>Abyan</h3>
-      <p>Semoga harimu menyenangkan!</p>
-    </div>
-
-    <div class="card">
-      <h3>Dzaky</h3>
-      <p>Semangat terus!</p>
-    </div>
-
-    <div class="card">
-      <h3>Najah</h3>
-      <p>Semangat biar ketemu jaehyun!</p>
-    </div>
-
     <script>
-      const toggleBtn = document.getElementById("darkModeToggle");
+    toggleBtn.addEventListener("click", () => {
+      const body = document.body;
+      const isDark = body.classList.toggle("dark");
 
-      toggleBtn.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode"); 
-        toggleBtn.textContent = document.body.classList.contains("daek-mode") ? "Light Mode" : "Dark Mode";
+      if (isDark) {
+        body.classList.remove("bg-gradient-to-b", "from-pink-100", "to-purple-200");
+        body.classList.add("bg-gray-900", "text-white");
+        toggleBtn.textContent = "☀️ Light Mode";
+      } else {
+        body.classList.add("bg-gradient-to-b", "from-pink-100", "to-purple-200");
+        body.classList.remove("bg-gray-900", "text-white");
+        toggleBtn.textContent = "🌙 Dark Mode";
+      }
+    });
+
+    renderWishes(wishes);
       });
     </script>
   </body>
