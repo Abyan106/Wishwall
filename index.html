@@ -5,6 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
+<!-- css iren -->
+<style>
+    .card {
+      transition: all 0.4s ease, transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(67, 86, 99, 0.25);
+      background-color: rgba(255, 255, 255, 0.95);
+    }
+
+    .dark .card {
+      background-color: rgba(163, 176, 135, 0.8);
+      color: #FFF8D4;
+    }
+
+    .dark .card:hover {
+      background-color: rgba(75, 85, 99, 0.9);
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+    }
+  </style>
+
 <body class="bg-gradient-to-b from-pink-100 to-purple-200 min-h-screen flex flex-col items-center justify-center p-6 transition-colors duration-700">
 
   <!-- headernya -->
@@ -74,8 +98,22 @@
   });
 
   displayWishes(wishes);
-<!-- sampe sini by KAYY -->
+//sampe sini by kay
  
+
+//bagian iren
+  // fade-in
+  function fadeInCards() {
+    const cards = document.querySelectorAll("#wishContainer div");
+    cards.forEach((card, i) => {
+      setTimeout(() => {
+        card.style.transition = "opacity 0.7s ease";
+        card.style.opacity = 1;
+      }, 150 * i);
+    });
+  };
+
+
 <!-- Patin punya -->
      toggleBtn.addEventListener("click", () => {
       const body = document.body;
@@ -93,7 +131,6 @@
     });
 
     renderWishes(wishes);
-      });
 </script>
 
 </body>
