@@ -32,6 +32,8 @@
   <footer class="mt-10 text-gray-500 text-sm text-center transition-colors duration-700">
     <p>Made with ❤️ by <span class="text-purple-600 font-semibold dark:text-purple-500">Kelompok 3</span></p>
   </footer>
+
+ 
 <!-- add nama and wish by KAYY -->
 <script>
   const wishes = [
@@ -43,7 +45,7 @@
   const wishContainer = document.getElementById("wishContainer");
 
   function displayWishes(list) {
-    wishContainer.innerHTML = ""; // reset/list ulang
+    wishContainer.innerHTML = "";
     list.forEach(item => {
       const card = `
         <div class="p-5 bg-white/80 dark:bg-gray-900 rounded-xl shadow-md hover:scale-105 transition-all duration-300">
@@ -56,18 +58,10 @@
   }
 
   displayWishes(wishes);
-</script>
 <!-- sampe sini by KAYY -->
-
-</body>
-</html>
-
-
-
+ 
 <!-- Patin punya -->
-
-    <script>
-    toggleBtn.addEventListener("click", () => {
+     toggleBtn.addEventListener("click", () => {
       const body = document.body;
       const isDark = body.classList.toggle("dark");
 
@@ -84,6 +78,9 @@
 
     renderWishes(wishes);
       });
-    </script>
-  </body>
+</script>
+
+</body>
 </html>
+
+
