@@ -61,3 +61,29 @@
 
 </body>
 </html>
+
+
+
+<!-- Patin punya -->
+
+    <script>
+    toggleBtn.addEventListener("click", () => {
+      const body = document.body;
+      const isDark = body.classList.toggle("dark");
+
+      if (isDark) {
+        body.classList.remove("bg-gradient-to-b", "from-pink-100", "to-purple-200");
+        body.classList.add("bg-gray-900", "text-white");
+        toggleBtn.textContent = "☀️ Light Mode";
+      } else {
+        body.classList.add("bg-gradient-to-b", "from-pink-100", "to-purple-200");
+        body.classList.remove("bg-gray-900", "text-white");
+        toggleBtn.textContent = "🌙 Dark Mode";
+      }
+    });
+
+    renderWishes(wishes);
+      });
+    </script>
+  </body>
+</html>
